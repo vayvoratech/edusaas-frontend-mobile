@@ -36,4 +36,8 @@ jobs:
       # Step 9 - Unit Testing
       - name: Run Unit Tests
         run: npm test -- --runInBand
+
+      # Step 10 - Security & Vulnerability Scan
+      - name: Security Audit
+        run: npm audit --audit-level=high
 ```
