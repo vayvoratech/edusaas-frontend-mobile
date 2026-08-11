@@ -11,19 +11,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 5 — Checkout Source Code
+      # Step 5 - Checkout Source Code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 6 — Dependency Installation
+      # Step 6 - Dependency Installation
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      # Step 7 — Static Code Analysis
-      - name: Static Code Analysis - Lint
+      # Step 7 - Static Code Analysis
+      - name: Lint
         run: npm run lint
+
+      # Step 8 - Compile / Build
+      - name: Build application
+        run: npm run build
